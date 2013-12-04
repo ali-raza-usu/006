@@ -1,5 +1,3 @@
-21:07:19,458 DEBUG Client.java: 42 - Connection is accepted by server
-21:07:21,219 DEBUG Client.java: 66 - Sending strings 'dfdsf' and 'dsfdsf'
-21:07:22,865 DEBUG Client.java: 81 - Received Levenshtein Distance between string : dfdsf and string dsfdsf is 1
-21:07:53,530 DEBUG Client.java: 66 - Sending strings 'kjewflkrewj;ltgjrewtgjrejhtlkerj;ltjre;ltre435444254yu6525u7ytuyt7u257ytu' and 'krejtlojre;ltjrelkjtlkrejt43uythrelktoireytoire769837459874309657098754'
-21:07:55,953 DEBUG Client.java: 81 - Received Levenshtein Distance between string : kjewflkrewj;ltgjrewtgjrejhtlkerj;ltjre;ltre435444254yu6525u7ytuyt7u257ytu and string krejtlojre;ltjrelkjtlkrejt43uythrelktoireytoire769837459874309657098754 is 54
+14:54:12,395 DEBUG Client.java: 42 - Connection is accepted by server
+14:54:15,770 DEBUG Client.java: 66 - Sending strings 'ali' and 'ali32'
+14:54:16,703 DEBUG Client.java: 81 - Received Levenshtein Distance between string : ali and string ali32 is 2
