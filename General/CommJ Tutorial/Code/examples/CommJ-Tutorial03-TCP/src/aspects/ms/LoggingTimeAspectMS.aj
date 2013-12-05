@@ -10,12 +10,15 @@ import utilities.Encoder;
 import utilities.Message;
 import baseaspects.communication.MultistepConversationAspect;
 
+import utilities.PerformanceMeasure;
+
 public aspect LoggingTimeAspectMS extends MultistepConversationAspect {
 
 	private Logger logger = Logger.getLogger(LoggingTimeAspectMS.class);
 	static String timingInfo = "";
 	private String sendTime = "";
 	private String endTime = "";	
+	static PerformanceMeasure perfMeasure = new PerformanceMeasure();
 
 	before(MultistepConversationJP _multiStepJP): ConversationBegin(_multiStepJP){
 		
@@ -36,10 +39,37 @@ public aspect LoggingTimeAspectMS extends MultistepConversationAspect {
      	Message msg =  (Message)Encoder.decode(_multiStepJP.getBytes());
      	String logString = " Multistep: MS Receiver: "+getTargetClass() + " - Message "+ msg.getClass().getSimpleName() + " [ID = " +_multiStepJP.getConversation().getId().toString()+"] at time "+ endTime;
      	logString += getRoundTripTime();
-     	logger.debug(logString);		
-		System.out.println(logString);
+     	System.out.println(logString);
+		
+     	perfMeasure.updateRollingStatsWindow(calcTurnAroundTime(sendTime, endTime)); 
+     	logString += perfMeasure.printCurrentStats();
+		logger.debug(logString);		
+		
 	}
 
+	private double calcTurnAroundTime(String sd, String ed){
+		double result = -1;
+		
+		Date sendTime = convertToTime(sd);
+		Date endTime = convertToTime(ed);
+		
+		result = (endTime.getTime() - sendTime.getTime()) / 1000;
+		
+		return result;
+	}
+	
+	private Date convertToTime(String date){
+		Date result = null;
+		
+		DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+		try {
+			result = dateFormat.parse(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
 	private String getRoundTripTime()
 	{
 		DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
