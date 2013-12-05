@@ -21,16 +21,7 @@ public aspect LoggingTimeAspectMS extends MultistepConversationAspect {
 	static PerformanceMeasure perfMeasure = new PerformanceMeasure();
 
 	before(MultistepConversationJP _multiStepJP): ConversationBegin(_multiStepJP){
-		
 		sendTime = getCurrentTime();
-     	Message msg =  (Message)Encoder.decode(_multiStepJP.getBytes());
-     	String logString = null;
-     	if(_multiStepJP.getConversation() == null)
-     		logString = "Multistep : MS Sender: "+getTargetClass() + " - Message "+ msg.getClass().getSimpleName() + " [ID = " +_multiStepJP.getConversation()+"] at time "+ sendTime;
-     	else
-     		logString = "Multistep: MS Sender: "+getTargetClass() + " - Message "+ msg.getClass().getSimpleName() + " [ID = " +_multiStepJP.getConversation().getId().toString()+"] at time "+ sendTime;
-		logger.debug(logString);		
-		System.out.println(logString);
 	}
 
 	after(MultistepConversationJP _multiStepJP): ConversationEnd(_multiStepJP){
@@ -38,9 +29,7 @@ public aspect LoggingTimeAspectMS extends MultistepConversationAspect {
 		endTime = getCurrentTime();	
      	Message msg =  (Message)Encoder.decode(_multiStepJP.getBytes());
      	String logString = " Multistep: MS Receiver: "+getTargetClass() + " - Message "+ msg.getClass().getSimpleName() + " [ID = " +_multiStepJP.getConversation().getId().toString()+"] at time "+ endTime;
-     	logString += getRoundTripTime();
-     	System.out.println(logString);
-		
+
      	perfMeasure.updateRollingStatsWindow(calcTurnAroundTime(sendTime, endTime)); 
      	logString += perfMeasure.printCurrentStats();
 		logger.debug(logString);		

@@ -1,5 +1,6 @@
 package aspects.rr;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -8,28 +9,55 @@ import org.apache.log4j.Logger;
 import baseaspects.communication.RRConversationAspect;
 import utilities.Encoder;
 import utilities.Message;
+import utilities.PerformanceMeasure;
 
 public aspect LoggingTimeAspectRR  extends RRConversationAspect{
-	private Logger logger = Logger.getLogger(LoggingTimeAspectRR.class);			
+	private Logger logger = Logger.getLogger(LoggingTimeAspectRR.class);	
+	private String sendTime = "";
+	private String endTime = "";	
+	static PerformanceMeasure perfMeasure = new PerformanceMeasure();
+
 
 	Object around(RequestReplyConversationJP _requestReplyJp): ConversationBegin(_requestReplyJp){
-		String sendTime = getCurrentTime();
-     	Message msg =  (Message)Encoder.decode(_requestReplyJp.getSendJp().getBytes());
-     	String logString = "Sender: "+getTargetClass() + " - Message "+ msg.getClass().getSimpleName() + " [ID = " +_requestReplyJp.getConversation().getId().toString()+"] at time "+ sendTime;
-		logger.debug(logString);		
-		System.out.println(logString);
+		sendTime = getCurrentTime();
      	return proceed(_requestReplyJp);
 	}
 	
 	Object around(RequestReplyConversationJP _requestReplyJp): ConversationEnd(_requestReplyJp){	
-		String endTime = getCurrentTime();	
+		endTime = getCurrentTime();	
      	Message msg =  (Message)Encoder.decode(_requestReplyJp.getSendJp().getBytes());
      	String logString = "Receiver: "+getTargetClass() + " - Message "+ msg.getClass().getSimpleName() + " [ID = " +_requestReplyJp.getConversation().getId().toString()+"] at time "+ endTime;
+		System.out.println(logString);
+		
+     	perfMeasure.updateRollingStatsWindow(calcTurnAroundTime(sendTime, endTime)); 
+     	logString += perfMeasure.printCurrentStats();
 		logger.debug(logString);		
 		System.out.println(logString);
 		return proceed(_requestReplyJp);
 	}
 	
+	private double calcTurnAroundTime(String sd, String ed){
+		double result = -1;
+		
+		Date sendTime = convertToTime(sd);
+		Date endTime = convertToTime(ed);
+		
+		result = (endTime.getTime() - sendTime.getTime()) / 1000;
+		
+		return result;
+	}
+	
+	private Date convertToTime(String date){
+		Date result = null;
+		
+		DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+		try {
+			result = dateFormat.parse(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 	private String getCurrentTime(){
 		DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");

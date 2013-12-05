@@ -9,7 +9,7 @@ public aspect SMInitialization extends baseaspects.communication.Initialization 
 	@Override
 	public void defineMappng() {
 		addMapping(Client.class, Client_SM.class);
-		addMapping(Server.class, Server_SM.class);
+		//addMapping(Server.class, Server_SM.class);
 	}
 }
  
