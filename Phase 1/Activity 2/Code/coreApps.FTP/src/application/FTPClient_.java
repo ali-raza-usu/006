@@ -21,9 +21,9 @@ import utilities.FileTransferRequest;
 import utilities.FileTransferResponse;
 import utilities.Message;
 
-public class FTPClient extends Thread {
+public class FTPClient_ extends Thread {
 
-	Logger _logger = Logger.getLogger(FTPClient.class);
+	Logger _logger = Logger.getLogger(FTPClient_.class);
 	SelectionKey selkey = null;
 	Selector sckt_manager = null;
 	ByteBuffer buffer = ByteBuffer.allocateDirect(5024);
@@ -34,7 +34,7 @@ public class FTPClient extends Thread {
 	private boolean transferComplete = false;
 	BufferedReader inputBuf = null;
 
-	public FTPClient() {
+	public FTPClient_() {
 
 	}
 
@@ -168,7 +168,7 @@ public class FTPClient extends Thread {
 	}
 
 	public static void main(String args[]) {
-		FTPClient _client = new FTPClient();
+		FTPClient_ _client = new FTPClient_();
 		_client.start();
 	}
 
@@ -177,7 +177,7 @@ public class FTPClient extends Thread {
 		byte[] bytes = new byte[buffer.remaining()];
 		buffer.get(bytes);
 		if (bytes.length > 0) {
-			message = Encoder.decode(bytes);
+			message = (Message) Encoder.decode(bytes);
 			// _logger.debug("Message length is "+ bytes.length +
 			// message.getClass());
 			buffer.clear();

@@ -21,12 +21,12 @@ import utilities.FileTransferRequest;
 import utilities.FileTransferResponse;
 import utilities.Message;
 
-public class FTPServer extends Thread {
-	public FTPServer() {
+public class FTPServer_ extends Thread {
+	public FTPServer_() {
 
 	}
 
-	Logger _logger = Logger.getLogger(FTPServer.class);
+	Logger _logger = Logger.getLogger(FTPServer_.class);
 	ServerSocketChannel ssc = null;
 	SelectionKey selkey = null;
 	Selector sckt_manager = null;
@@ -48,7 +48,7 @@ public class FTPServer extends Thread {
 	}
 
 	public static void main(String args[]) {
-		FTPServer _server = new FTPServer();
+		FTPServer_ _server = new FTPServer_();
 		_server.start();
 	}
 
@@ -237,7 +237,7 @@ public class FTPServer extends Thread {
 		Message message = null;
 		byte[] bytes = new byte[buffer.remaining()];
 		buffer.get(bytes);
-		message = Encoder.decode(bytes);
+		message = (Message) Encoder.decode(bytes);
 		buffer.clear();
 		buffer = ByteBuffer.wrap(Encoder.encode(message));
 		return message;
