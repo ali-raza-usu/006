@@ -1,8 +1,8 @@
-23:36:40,264 DEBUG Client.java: 42 - Connection is accepted by server
-23:36:44,695 DEBUG Client.java: 66 - Sending strings 'kdfgs;d' and 'dskghs;g'
-23:36:47,250 DEBUG Client.java: 81 - Received Levenshtein Distance between string : kdfgs;d and string dskghs;g is 5
-23:36:53,314 DEBUG Client.java: 66 - Sending strings ';lgjd;g' and 'fjd;fjhgdf;'
-23:36:54,961 DEBUG Client.java: 81 - Received Levenshtein Distance between string : ;lgjd;g and string fjd;fjhgdf; is 9
-23:37:01,055 DEBUG Client.java: 66 - Sending strings 'ioruperuty' and 'fdhdkfhd;fg;'
-23:37:01,895 DEBUG Client.java: 81 - Received Levenshtein Distance between string : ioruperuty and string fdhdkfhd;fg; is 12
-23:37:37,084 DEBUG Client.java: 66 - Sending strings 'quit' and 'quit'
+07:24:23,072 DEBUG Client.java: 42 - Connection is accepted by server
+07:24:32,873 DEBUG Client.java: 66 - Sending strings 'laleh 1' and 'laleh 2'
+07:24:35,354 DEBUG Client.java: 81 - Received Levenshtein Distance between string : laleh 1 and string laleh 2 is 1
+07:24:44,483 DEBUG Client.java: 66 - Sending strings 'test' and 'test2'
+07:24:46,941 DEBUG Client.java: 81 - Received Levenshtein Distance between string : test and string test2 is 1
+07:24:52,935 DEBUG Client.java: 66 - Sending strings 'test' and 'tst'
+07:24:53,770 DEBUG Client.java: 81 - Received Levenshtein Distance between string : test and string tst is 1
+07:25:37,346 DEBUG Client.java: 66 - Sending strings 'quit' and 'quit'

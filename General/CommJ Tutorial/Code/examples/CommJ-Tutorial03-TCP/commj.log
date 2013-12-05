@@ -1,87 +1,43 @@
-23:36:39,959 DEBUG Initialization.aj: 35 - className application.Client
-23:36:39,969 DEBUG Initialization.aj: 35 - className application.Client
-23:36:44,707 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1412
-23:36:44,765 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-23:36:44,766 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-23:36:44,771 DEBUG StateMachine.java: 216 - In Creat State Machine method
-23:36:44,772 DEBUG StateMachine.java: 217 - In Creat State Machine method with Protocol universe.Protocol@100f35bd
-23:36:44,773 DEBUG StateMachine.java: 218 - In Creat State Machine method with Protocol.Name TimeLogger
-23:36:44,773 DEBUG StateMachine.java: 219 - role Server
-23:36:44,774 DEBUG StateMachine.java: 220 - conversation universe.Conversation@31024864
-23:36:44,774 DEBUG StateMachine.java: 222 - creating state machine for type class aspects.ms.Server_SM
-23:36:44,778 DEBUG LoggingTimeAspectMS.aj: 32 - Multistep: MS Sender: Server - Message TranslationMessage [ID = fa862706-83b7-4b3f-a52e-18b968a1471b] at time 23:36:44
-23:36:44,779 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is Initial
-23:36:44,780 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is ServerRcvdRequest
-23:36:44,780 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
-23:36:44,796 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.TranslationMessage
-23:36:47,206 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-23:36:47,207 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-23:36:47,208 DEBUG Server.java: 158 - remaining bytes sent are 872
-23:36:47,210 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is ServerRcvdRequest
-23:36:47,210 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is ServerSentResponse
-23:36:47,211 23:36:47,218 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1241
-23:36:47,220 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is ClientSendRequest
-23:36:47,220 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is ClientRcvdResponse
-23:36:47,221 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  true
-23:36:47,222 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.TranslationMessage
-23:36:47,246 DEBUG LoggingTimeAspectMS.aj: 46 -  Multistep: MS Receiver: Client - Message TranslationMessage [ID = fa862706-83b7-4b3f-a23:36:53,314 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1415
-23:36:53,317 DEBUG StateMachine.java: 216 - In Creat State Machine method
-23:36:53,317 DEBUG StateMachine.java: 217 - In Creat State Machine method with Protocol universe.Protocol@100f35bd
-23:36:53,318 DEBUG StateMachine.java: 218 - In Creat State Machine method with Protocol.Name TimeLogger
-23:36:53,318 DEBUG StateMachine.java: 219 - role Server
-23:36:53,318 DEBUG StateMachine.java: 220 - conversation universe.Conversation@4cb51c2d
-23:36:53,319 DEBUG StateMachine.java: 222 - creating state machine for type class aspects.ms.Server_SM
-23:36:53,321 DEBUG LoggingTimeAspectMS.aj: 32 - Multistep: MS Sender: Server - Message TranslationMessage [ID = eaabf1b3-cd04-4e41-95f5-9296a0e5af67] at time 23:36:53
-23:36:53,321 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is Initial
-23:36:53,322 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is ServerRcvdRequest
-23:36:53,322 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
-23:36:53,325 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.TranslationMessage
-23:36:54,941 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-23:36:54,941 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-23:36:54,943 DEBUG Server.java: 158 - remaining bytes sent are 875
-23:36:54,944 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is ServerRcvdRequest
-23:36:54,944 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is ServerSentResponse
-23:36:54,944 23:36:54,949 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1244
-23:36:54,951 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is ClientSendRequest
-23:36:54,951 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is ClientRcvdResponse
-23:36:54,952 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  true
-23:36:54,953 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.TranslationMessage
-23:36:54,957 DEBUG LoggingTimeAspectMS.aj: 46 -  Multistep: MS Receiver: Client - Message TranslationMessage [ID = eaabf1b3-cd04-4e41-923:37:01,062 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1419
-23:37:01,064 DEBUG StateMachine.java: 216 - In Creat State Machine method
-23:37:01,065 DEBUG StateMachine.java: 217 - In Creat State Machine method with Protocol universe.Protocol@100f35bd
-23:37:01,065 DEBUG StateMachine.java: 218 - In Creat State Machine method with Protocol.Name TimeLogger
-23:37:01,065 DEBUG StateMachine.java: 219 - role Server
-23:37:01,066 DEBUG StateMachine.java: 220 - conversation universe.Conversation@76f7c5
-23:37:01,066 DEBUG StateMachine.java: 222 - creating state machine for type class aspects.ms.Server_SM
-23:37:01,068 DEBUG LoggingTimeAspectMS.aj: 32 - Multistep: MS Sender: Server - Message TranslationMessage [ID = 20b2f9a7-ea2e-4976-a1aa-52b0f4673637] at time 23:37:01
-23:37:01,069 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is Initial
-23:37:01,069 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is ServerRcvdRequest
-23:37:01,069 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
-23:37:01,071 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.TranslationMessage
-23:37:01,877 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-23:37:01,877 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-23:37:01,878 DEBUG Server.java: 158 - remaining bytes sent are 880
-23:37:01,879 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is ServerRcvdRequest
-23:37:01,879 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is ServerSentResponse
-23:37:01,879 DE23:37:01,884 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1249
-23:37:01,886 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is ClientSendRequest
-23:37:01,886 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is ClientRcvdResponse
-23:37:01,886 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  true
-23:37:01,888 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.TranslationMessage
-23:37:01,891 DEBUG LoggingTimeAspectMS.aj: 46 -  Multistep: MS Receiver: Client - Message TranslationMessage [ID = 20b2f9a7-ea2e-4976-a1aa-52b0f467323:37:37,088 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1405
-23:37:37,090 DEBUG StateMachine.java: 216 - In Creat State Machine method
-23:37:37,091 DEBUG StateMachine.java: 217 - In Creat State Machine method with Protocol universe.Protocol@100f35bd
-23:37:37,091 DEBUG StateMachine.java: 218 - In Creat State Machine method with Protocol.Name TimeLogger
-23:37:37,092 DEBUG StateMachine.java: 219 - role Server
-23:37:37,092 DEBUG StateMachine.java: 220 - conversation universe.Conversation@d73c52f
-23:37:37,092 DEBUG StateMachine.java: 222 - creating state machine for type class aspects.ms.Server_SM
-23:37:37,094 DEBUG LoggingTimeAspectMS.aj: 32 - Multistep: MS Sender: Server - Message TranslationMessage [ID = b3bb4387-e443-40a3-b854-8781661da954] at time 23:37:37
-23:37:37,095 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is Initial
-23:37:37,095 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is ServerRcvdRequest
-23:37:37,096 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
-23:37:37,100 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.TranslationMessage
- - Message TranslationMessage [ID = b3bb4387-e443-40a3-b854-8781661da954] at time 23:37:37
-23:37:37,077 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is Initial
-23:37:37,077 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is ClientSendRequest
-23:37:37,078 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  false
-23:37:37,079 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.TranslationMessage
+07:24:22,722 DEBUG Initialization.aj: 35 - className application.Client
+07:24:22,726 DEBUG Initialization.aj: 35 - className application.Client
+07:24:32,884 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 939
+07:24:32,920 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:24:32,920 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:24:35,337 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:24:35,337 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:24:35,338 DEBUG Server.java: 158 - remaining bytes sent are 634
+07:24:35,341 DEBUG RRConversationAspect.aj: 25 - Sender: Server - Message TranslationMessage [ID = a725b743-ed35-424f-9c03-80d0dab6deb6] at time 07:24:35
+07:24:44,491 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 934
+07:24:44,507 DEBUG RRConversationAspect.aj: 38 - Receiver: Server - Message TranslationMessage [ID = a725b743-ed35-424f-9c03-80d0dab6deb6] at time 07:24:44
+================== Stats for Performance Measure ========================
+ Total Receives 1
+avg Turnaround Time for conv. 9.0  Overall total time for conv 9.0
+current Turnaround Time : 9.0 avg Minimum Turnaround Time for conv. 9.0  Maximum Turnaround time for conv 9.0
+07:24:46,914 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:24:46,914 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:24:46,926 DEBUG Server.java: 158 - remaining bytes sent are 629
+07:24:46,928 DEBUG RRConversationAspect.aj: 25 - Sender: Server - Message TranslationMessage [ID = a725b743-ed35-424f-9c03-80d0dab6deb6] at time 07:24:46
+07:24:52,936 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 932
+07:24:52,948 DEBUG RRConversationAspect.aj: 38 - Receiver: Server - Message TranslationMessage [ID = a725b743-ed35-424f-9c03-80d0dab6deb6] at time 07:24:52
+================== Stats for Performance Measure ========================
+ Total Receives 2
+avg Turnaround Time for conv. 7.5  Overall total time for conv 15.0
+current Turnaround Time : 6.0 avg Minimum Turnaround Time for conv. 6.0  Maximum Turnaround time for conv 9.0
+07:24:53,756 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:24:53,756 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:24:53,757 DEBUG Server.java: 158 - remaining bytes sent are 627
+07:24:53,758 DEBUG RRConversationAspect.aj: 25 - Sender: Server - Message TranslationMessage [ID = a725b743-ed35-424f-9c03-80d0dab6deb6] at time 07:24:53
+07:25:37,353 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 933
+07:25:37,357 DEBUG RRConversationAspect.aj: 38 - Receiver: Server - Message TranslationMessage [ID = a725b743-ed35-424f-9c03-80d0dab6deb6] at time 07:25:37
+================== Stats for Performance Measure ========================
+ Total Receives 3
+avg Turnaround Time for conv. 19.666666666666668  Overall total time for conv 59.0
+current Turnaround Time : 44.0 avg Minimum Turnaround Time for conv. 6.0  Maximum Turnaround time for conv 44.0
+e ========================
+ Total Receives 3
+avg Turnaround Time for conv. 2.0  Overall total time for conv 6.0
+current Turnaround Time : 1.0 avg Minimum Turnaround Time for conv. 1.0  Maximum Turnaround time for conv 3.0
+07:25:37,339 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:25:37,339 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+07:25:37,341 DEBUG Client.java: 158 - remaining bytes sent are 571
+07:25:37,344 DEBUG RRConversationAspect.aj: 25 - Sender: Client - Message TranslationMessage [ID = a725b743-ed35-424f-9c03-80d0dab6deb6] at time 07:25:37
