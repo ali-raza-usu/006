@@ -1,0 +1,26 @@
+17:37:47,852 DEBUG MeasurePerformanceAspect.aj: 21 - MeasurePerformanceAspect : ConversationBegin(rrjp)
+17:37:47,854 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is Initial
+17:37:47,855 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is ClientSendRequest
+17:37:47,855 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  false
+17:37:47,856 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class exp.ftp.messages.FileTransferRequest
+17:37:47,898 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is ClientSendRequest
+17:37:47,898 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is ClientSendRequest
+17:37:47,899 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
+17:37:47,900 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class exp.ftp.messages.FileTransferRequest
+17:37:48,639 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is ClientSendRequest
+17:37:48,640 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is ClientSendRequest
+17:37:48,640 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  false
+17:37:48,641 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class exp.ftp.messages.FileTransferRequest
+17:37:49,167 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is ClientSendRequest
+17:37:49,168 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is FileTransferRspRcvd
+17:37:49,168 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
+17:37:49,169 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class exp.ftp.messages.FileTransferResponse
+17:37:49,174 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is FileTransferRspRcvd
+17:37:49,175 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is FileTransferAckSend
+17:37:49,176 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  true
+17:37:49,177 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class exp.ftp.messages.FileTransferAck
+17:37:49,178 DEBUG MeasurePerformanceAspect.aj: 31 - MeasurePerformanceAspect : ConversationEnd(rrjp)
+17:37:49,178 DEBUG MeasurePerformanceAspect.aj: 38 - ================== Stats for Performance Measure ========================
+ Total Receives 1
+avg Turnaround Time for conv. 132.0  Overall total time for conv 132.0
+current Turnaround Time : 132.0 avg Minimum Turnaround Time for conv. 132.0  Maximum Turnaround time for conv 132.0
