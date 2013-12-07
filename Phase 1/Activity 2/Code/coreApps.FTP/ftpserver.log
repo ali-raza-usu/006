@@ -1,0 +1,8 @@
+17:37:01,115 DEBUG FTPServer_.java: 78 - FTP Server Accepted the FTP Client Connection Request
+17:37:04,041 DEBUG FTPServer_.java: 112 - Server sent the list of files to the client
+17:37:06,018 ERROR FTPServer_.java: 214 - java.lang.NullPointerException
+	at joinpointracker.MessageJoinPointTracker.ajc$after$joinpointracker_MessageJoinPointTracker$1$a8f10751(MessageJoinPointTracker.aj:98)
+	at application.FTPServer_.coreServer(FTPServer_.java:86)
+	at application.FTPServer_.run(FTPServer_.java:44)
+
+17:37:06,019 DEBUG FTPServer_.java: 218 - closing connection 
