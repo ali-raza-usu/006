@@ -1,0 +1,4 @@
+13:23:24,342 DEBUG FTPClient.java: 103 - File created at /Users/aliraza/Desktop/Office/CommJ/CommJ-Code/ExperimentSpace/coreApps.FTP/paper1.txt
+13:23:24,344 DEBUG FTPClient.java: 131 - Client is sending File Complete Transfer Ack
+13:23:24,347 DEBUG FTPClient.java: 135 - File Transfer is complete. Now the file is being opened
+13:23:24,491 DEBUG FTPClient.java: 149 - Client is closing all the connections 
