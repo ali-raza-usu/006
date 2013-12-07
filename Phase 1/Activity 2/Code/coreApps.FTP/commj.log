@@ -1,33 +1,50 @@
-17:37:00,766 DEBUG Initialization.aj: 35 - className application.FTPClient_
-17:37:00,775 DEBUG Initialization.aj: 35 - className application.FTPClient_
-17:37:03,962 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1436
-17:37:03,993 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-17:37:03,993 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-17:37:04,008 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-17:37:04,009 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-17:37:04,010 DEBUG FTPServer_.java: 158 - remaining bytes sent are 575
-17:37:05,981 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 575
-ization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-17:37:03,921 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-17:37:03,928 DEBUG StateMachine.java: 216 - In Creat State Machine method
-17:37:03,928 DEBUG StateMachine.java: 217 - In Creat State Machine method with Protocol universe.Protocol@2fe2c656
-17:37:03,929 DEBUG StateMachine.java: 218 - In Creat State Machine method with Protocol.Name TimeLogger
-17:37:03,929 DEBUG StateMachine.java: 219 - role FTPClient_
-17:37:03,930 DEBUG StateMachine.java: 220 - conversation universe.Conversation@49450f34
-17:37:03,931 DEBUG StateMachine.java: 222 - creating state machine for type class aspects.ms.Client_SM
-17:37:03,944 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is Initial
-17:37:03,945 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is ClientSendRequest
-17:37:03,945 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  false
-17:37:03,946 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.FileTransferRequest
-17:37:04,041 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 575
-17:37:04,043 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is ClientSendRequest
-17:37:04,043 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is FileTransferRcvd
-17:37:04,043 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
-17:37:04,044 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.FileTransferRequest
-17:37:05,968 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-17:37:05,968 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
-17:37:05,969 DEBUG FTPClient_.java: 158 - remaining bytes sent are 737
-17:37:05,971 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is FileTransferRcvd
-17:37:05,971 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is FileTransferRcvd
-17:37:05,971 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  false
-17:37:05,972 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.FileTransferRequest
+17:45:24,095 DEBUG Initialization.aj: 35 - className application.FTPClient
+17:45:24,103 DEBUG Initialization.aj: 35 - className application.FTPClient
+17:45:26,455 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1615
+17:45:26,486 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:26,487 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:26,501 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:26,502 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:26,503 DEBUG FTPServer.java: 158 - remaining bytes sent are 575
+17:45:28,100 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1432
+17:45:28,107 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:28,108 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:28,219 DEBUG FTPServer.java: 158 - remaining bytes sent are 1043
+17:45:28,254 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1106
+45:26,420 DEBUG StateMachine.java: 218 - In Creat State Machine method with Protocol.Name TimeLogger
+17:45:26,421 DEBUG StateMachine.java: 219 - role FTPClient_
+17:45:26,422 DEBUG StateMachine.java: 220 - conversation universe.Conversation@1e905b0d
+17:45:26,433 DEBUG StateMachine.java: 222 - creating state machine for type class aspects.ms.Client_SM
+17:45:26,436 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is Initial
+17:45:26,436 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is Initial
+17:45:26,436 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  false
+17:45:26,438 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.FileTransferRequest
+17:45:26,545 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 575
+17:45:26,551 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is Initial
+17:45:26,551 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is HasListOfFiles
+17:45:26,552 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
+17:45:26,552 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.FileTransferRequest
+17:45:28,077 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:28,078 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:28,080 DEBUG FTPClient.java: 158 - remaining bytes sent are 737
+17:45:28,082 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is HasListOfFiles
+17:45:28,082 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is FileTransferRequestSent
+17:45:28,083 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  false
+17:45:28,085 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.FileTransferRequest
+17:45:28,226 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 1043
+17:45:28,229 DEBUG MultistepConversationAspect.aj: 96 - R : before transition current state is FileTransferRequestSent
+17:45:28,229 DEBUG MultistepConversationAspect.aj: 99 - R : after transition current state is WaitForChunk
+17:45:28,230 DEBUG MultistepConversationAspect.aj: 100 - R : is final state  false
+17:45:28,231 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.FileTransferResponse
+17:45:28,234 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:28,235 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+17:45:28,237 DEBUG FTPClient.java: 158 - remaining bytes sent are 746
+17:45:28,238 DEBUG MultistepConversationAspect.aj: 96 - S : before transition current state is WaitForChunk
+17:45:28,238 DEBUG MultistepConversationAspect.aj: 99 - S : after transition current state is Terminate
+17:45:28,239 DEBUG MultistepConversationAspect.aj: 100 - S : is final state  true
+17:45:28,246 DEBUG MultistepConversationAspect.aj: 101 -  : current message is class utilities.FileTransferAck
+17:45:28,249 DEBUG LoggingTimeAspectMS.aj: 35 -  Multistep: MS Receiver: FTPClient - Message FileTransferAck [ID = 1fe87547-05e0-4a03-ae8e-a3c3cb178ead] at time 17:45:28
+================== Stats for Performance Measure ========================
+ Total Receives 1
+avg Turnaround Time for conv. 2.0  Overall total time for conv 2.0
+current Turnaround Time : 2.0 avg Minimum Turnaround Time for conv. 2.0  Maximum Turnaround time for conv 2.0

@@ -16,13 +16,10 @@ public class Client_SM extends StateMachine {
 
 	@Override
 	public void buildTransitions() {
-		addTransition("Initial", 'S', "FileTransferRequest","ClientSendRequest");
-		addTransition("ClientSendRequest", 'R', "FileTransferRequest","FileTransferRcvd");
-		addTransition("FileTransferRcvd", 'S', "FileTransferAck","FileTransferAckSent");
-		//addTransition("Initial", 'R', "FileTransferRequest","HasListOfFiles");
-		//addTransition("HasListOfFiles", 'S', "FileTransferRequest","FileTransferRequestSent");
-		//addTransition("FileTransferRequestSent", 'R', "FileTransferResponse","WaitForChunk");
-		//addTransition("WaitForChunk", 'S', "FileTransferAck","Terminate");
+		addTransition("Initial", 'R', "FileTransferRequest","HasListOfFiles");
+		addTransition("HasListOfFiles", 'S', "FileTransferRequest","FileTransferRequestSent");
+		addTransition("FileTransferRequestSent", 'R', "FileTransferResponse","WaitForChunk");
+		addTransition("WaitForChunk", 'S', "FileTransferAck","Terminate");
 	}
 
 	public static Protocol getProtocol() {

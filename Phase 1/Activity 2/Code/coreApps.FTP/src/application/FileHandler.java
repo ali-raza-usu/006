@@ -14,14 +14,12 @@ import org.junit.Test;
 
 import utilities.FileTransferResponse;
 
-
 public class FileHandler {
 
 	// This class downloads the file from the Server to Client in Chunks
 	// Interface Provides the option with list of files
 
 	public FileHandler() {
-
 	}
 
 	private static Logger _logger = Logger.getLogger(FileHandler.class);
@@ -93,18 +91,6 @@ public class FileHandler {
 			_logger.debug(ExceptionUtils.getStackTrace(e));
 		}
 		return integer;
-	}
-
-	public static void main(String[] args) {
-		try {
-			FileHandler _handler = new FileHandler();
-			File file = _handler.getUserInput();
-			if (file != null) {
-				_handler.transferFile(file);
-			}
-		} catch (Exception e) {
-			_logger.debug(ExceptionUtils.getStackTrace(e));
-		}
 	}
 
 	private boolean transferFile(File _file) throws IOException {
