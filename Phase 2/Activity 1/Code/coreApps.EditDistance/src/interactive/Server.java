@@ -17,7 +17,10 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import utilities.Encoder;
-import utilities.TranslationMessage;
+import utilities.IMessage;
+//import utilities.TranslationMessage;
+import utilities.TranslationRequestMessage;
+import utilities.TranslationResponseMessage;
 
 public class Server extends Thread {
 
@@ -55,7 +58,8 @@ public class Server extends Thread {
 				ssc.register(sckt_manager, SelectionKey.OP_ACCEPT);
 				_logger.debug("Channel Establishd");
 
-				TranslationMessage msg = null;
+				TranslationRequestMessage msgReq = null;
+				TranslationResponseMessage msgResp = null;
 
 				while (true) {
 					sckt_manager.select();
@@ -84,9 +88,9 @@ public class Server extends Thread {
 
 								buffer.flip();
 								// New Input Message
-								msg = (TranslationMessage) convertBufferToMessage(buffer);
-								_logger.debug("Received " + msg.getData1());
-								if (msg.getData1().equals("quit")) {
+								msgReq = (TranslationRequestMessage) convertBufferToMessage(buffer);
+								_logger.debug("Received " + msgReq.getData1());
+								if (msgReq.getData1().equals("quit")) {
 									_logger.debug("Now disconnecting the client");
 									client.close();
 									return;
@@ -94,18 +98,18 @@ public class Server extends Thread {
 							}
 							int num = 1 + (int) (Math.random() * ((1 - 4) + 1));
 							Thread.sleep(num * 200);
-							int result = LevenshteinDistance(msg.getData1(),
-									msg.getData2());
-							msg = new TranslationMessage(
+							int result = LevenshteinDistance(msgReq.getData1(),
+									msgReq.getData2());
+							msgResp = new TranslationResponseMessage(
 									"Levenshtein Distance between string : "
-											+ msg.getData1() + " and string "
-											+ msg.getData2() + " is " + result);
+											+ msgReq.getData1() + " and string "
+											+ msgReq.getData2() + " is " + result);
 							buffer.clear();
-							buffer = ByteBuffer.wrap(Encoder.encode(msg));
+							buffer = ByteBuffer.wrap(Encoder.encode((IMessage) msgResp));
 							client.write(buffer);
-							_logger.debug("Sending " + msg.getResponse());
-							if (msg.getData1().equals("quit")
-									|| msg.getData2().equals("quit")) {
+							_logger.debug("Sending " + msgResp.getResponse());
+							if (msgReq.getData1().equals("quit")
+									|| msgReq.getData2().equals("quit")) {
 								client.close();
 								return;
 							}
@@ -130,13 +134,13 @@ public class Server extends Thread {
 		}
 	}
 
-	private TranslationMessage convertBufferToMessage(ByteBuffer buffer) {
-		TranslationMessage message = null;
+	private TranslationRequestMessage convertBufferToMessage(ByteBuffer buffer) {
+		TranslationRequestMessage message = null;
 		byte[] bytes = new byte[buffer.remaining()];
 		buffer.get(bytes);
-		message = (TranslationMessage) Encoder.decode(bytes);
+		message = (TranslationRequestMessage) Encoder.decode(bytes);
 		buffer.clear();
-		buffer = ByteBuffer.wrap(Encoder.encode(message));
+		buffer = ByteBuffer.wrap(Encoder.encode((IMessage) message));
 		return message;
 	}
 

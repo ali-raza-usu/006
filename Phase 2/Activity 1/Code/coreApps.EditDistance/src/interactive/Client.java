@@ -13,7 +13,10 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.log4j.Logger;
 
 import utilities.Encoder;
-import utilities.TranslationMessage;
+import utilities.IMessage;
+//import utilities.TranslationMessage;
+import utilities.TranslationRequestMessage;
+import utilities.TranslationResponseMessage;
 
 public class Client extends Thread {
 	Logger _logger = Logger.getLogger(Client.class);
@@ -57,16 +60,17 @@ public class Client extends Thread {
 									new InputStreamReader(System.in));
 							_data2 = bufReader.readLine();
 
-							TranslationMessage msg = null;
+							TranslationRequestMessage msgReq = null;
+							TranslationResponseMessage msgResp = null;
 							if (_data1 != null && _data2 != null) {
-								msg = new TranslationMessage(_data1, _data2);
-								buffer = ByteBuffer.wrap(Encoder.encode(msg));
+								msgReq = new TranslationRequestMessage(_data1, _data2);
+								buffer = ByteBuffer.wrap(Encoder.encode((IMessage) msgReq));
 								sc.write(buffer);
 								_logger.debug("Sending strings '"
-										+ msg.getData1() + "' and '"
-										+ msg.getData2() + "'");
-								if (msg.getData1().equals("quit")
-										|| msg.getData2().equals("quit")) {
+										+ msgReq.getData1() + "' and '"
+										+ msgReq.getData2() + "'");
+								if (msgReq.getData1().equals("quit")
+										|| msgReq.getData2().equals("quit")) {
 									sc.close();
 									return;
 								}
@@ -78,9 +82,9 @@ public class Client extends Thread {
 							while (sc.read(readBuf) <= 0)
 								;
 							readBuf.flip();
-							msg = (TranslationMessage) convertBufferToMessage(readBuf);
-							System.out.println("Received " + msg.getResponse());
-							_logger.debug("Received " + msg.getResponse());
+							msgResp = (TranslationResponseMessage) convertBufferToMessage(readBuf);
+							System.out.println("Received " + msgResp.getResponse());
+							_logger.debug("Received " + msgResp.getResponse());
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -119,13 +123,13 @@ public class Client extends Thread {
 		_client.start();
 	}
 
-	private TranslationMessage convertBufferToMessage(ByteBuffer buffer) {
-		TranslationMessage message = null;
+	private TranslationResponseMessage convertBufferToMessage(ByteBuffer buffer) {
+		TranslationResponseMessage message = null;
 		byte[] bytes = new byte[buffer.remaining()];
 		buffer.get(bytes);
-		message = (TranslationMessage) Encoder.decode(bytes);
+		message = (TranslationResponseMessage) Encoder.decode(bytes);
 		buffer.clear();
-		buffer = ByteBuffer.wrap(Encoder.encode(message));
+		buffer = ByteBuffer.wrap(Encoder.encode((IMessage) message));
 		return message;
 	}
 

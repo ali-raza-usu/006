@@ -1,0 +1,26 @@
+18:05:51,019 DEBUG Initialization.aj: 35 - className interactive.Client
+18:05:51,025 DEBUG Initialization.aj: 35 - className interactive.Client
+18:05:55,267 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 900
+18:05:55,293 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+18:05:55,294 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+18:05:55,335 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+18:05:55,335 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+18:05:55,337 DEBUG MessageJoinPointTracker.aj: 158 - remaining bytes sent are 582
+18:05:55,341 DEBUG LoggingTimeAspectRR.aj: 25 - Sender: Server - Message TranslationResponseMessage [ID = 54b5dc41-d5ab-4e4e-825b-35e4523914d9] at time 18:05:55
+18:05:57,263 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 893
+18:05:57,272 DEBUG LoggingTimeAspectRR.aj: 38 - Receiver: Server - Message TranslationResponseMessage [ID = 54b5dc41-d5ab-4e4e-825b-35e4523914d9] at time 18:05:57================== Stats for Performance Measure ========================
+ Total Receives 1
+avg Turnaround Time for conv. 2.0  Overall total time for conv 2.0
+current Turnaround Time : 2.0 avg Minimum Turnaround Time for conv. 2.0  Maximum Turnaround time for conv 2.0
+18:05:57,479 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+18:05:57,480 DEBUG Initialization.aj: 41 - Configuring the Message: Role, Protocol, Conversation
+18:05:57,480 DEBUG MessageJoinPointTracker.aj: 158 - remaining bytes sent are 575
+18:05:57,482 DEBUG LoggingTimeAspectRR.aj: 25 - Sender: Server - Message TranslationResponseMessage [ID = 54b5dc41-d5ab-4e4e-825b-35e4523914d9] at time 18:05:57
+41 - Configuring the Message: Role, Protocol, Conversation
+18:05:57,254 DEBUG MessageJoinPointTracker.aj: 158 - remaining bytes sent are 531
+18:05:57,256 DEBUG LoggingTimeAspectRR.aj: 25 - Sender: Client - Message TranslationRequestMessage [ID = 54b5dc41-d5ab-4e4e-825b-35e4523914d9] at time 18:05:57
+18:05:57,485 DEBUG MessageJoinPointTracker.aj: 60 - remaining bytes received are are 937
+18:05:57,491 DEBUG LoggingTimeAspectRR.aj: 38 - Receiver: Client - Message TranslationRequestMessage [ID = 54b5dc41-d5ab-4e4e-825b-35e4523914d9] at time 18:05:57================== Stats for Performance Measure ========================
+ Total Receives 2
+avg Turnaround Time for conv. 0.0  Overall total time for conv 0.0
+current Turnaround Time : 0.0 avg Minimum Turnaround Time for conv. 0.0  Maximum Turnaround time for conv 0.0

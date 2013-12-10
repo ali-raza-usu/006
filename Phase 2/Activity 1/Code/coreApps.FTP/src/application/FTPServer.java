@@ -30,7 +30,7 @@ public class FTPServer extends Thread {
 	ServerSocketChannel ssc = null;
 	SelectionKey selkey = null;
 	Selector sckt_manager = null;
-	ByteBuffer buffer = ByteBuffer.allocateDirect(5024);
+	ByteBuffer buffer = ByteBuffer.allocateDirect(2048);
 	FileHandler _fileHandler = new FileHandler();
 	FileInputStream fis = null;
 	int CHUNK_SIZE = 1000;
@@ -88,16 +88,17 @@ public class FTPServer extends Thread {
 							_data = (Message) convertBufferToMessage(buffer);
 							// _logger.debug("reading data and converting to message "+
 							// _data);
+//							if (_data != null
+//									&& _data.getClass().equals(
+//											FileTransferAck.class)) {
+//								FileTransferAck _fileTransferAck = (FileTransferAck) _data;
+//								_logger.debug("Server received File Complete Transfer Ack");
+//								if (_fileTransferAck.isComplete()) {
+//									transferComplete = true;
+//									// break;
+//								}
+//							} else 
 							if (_data != null
-									&& _data.getClass().equals(
-											FileTransferAck.class)) {
-								FileTransferAck _fileTransferAck = (FileTransferAck) _data;
-								_logger.debug("Server received File Complete Transfer Ack");
-								if (_fileTransferAck.isComplete()) {
-									transferComplete = true;
-									// break;
-								}
-							} else if (_data != null
 									&& _data.getClass().equals(
 											FileTransferRequest.class)) {
 								FileTransferRequest _fileTransferRequest = (FileTransferRequest) _data;
@@ -211,9 +212,9 @@ public class FTPServer extends Thread {
 					_logger.debug("closing connection ");
 					buffer.clear();
 					ssc.close();
-					if (transferComplete) {
+//					if (transferComplete) {
 						fis.close();
-					}
+//					}
 				} catch (IOException e) {
 					_logger.error(ExceptionUtils.getStackTrace(e));
 				}
@@ -230,7 +231,7 @@ public class FTPServer extends Thread {
 		Message message = null;
 		byte[] bytes = new byte[buffer.remaining()];
 		buffer.get(bytes);
-		message = Encoder.decode(bytes);
+		message = (Message) Encoder.decode(bytes);
 		buffer.clear();
 		buffer = ByteBuffer.wrap(Encoder.encode(message));
 		return message;

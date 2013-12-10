@@ -16,8 +16,10 @@ public class Server_SM extends StateMachine {
 
 	@Override
 	public void buildTransitions() {
-		addTransition("Initial", 'R', "TranslationMessage","ServerRcvdRequest");
-		addTransition("ServerRcvdRequest", 'S', "TranslationMessage","ServerSentResponse");
+		addTransition("Initial", 'R', "FileTransferRequest","ReceiveFTPReq");
+		addTransition("ReceiveFTPReq", 'S', "FileTransferResponse","SendFileTransferRes");
+//		addTransition("FileTransferRequestSent", 'S', "FileTransferResponse","FileTransferRequestSent");
+//		addTransition("WaitForChunk", 'S', "FileTransferAck","Terminate");
 	}
 
 	public static Protocol getProtocol() {

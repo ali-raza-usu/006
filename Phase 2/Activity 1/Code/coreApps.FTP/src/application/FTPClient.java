@@ -26,8 +26,8 @@ public class FTPClient extends Thread {
 	Logger _logger = Logger.getLogger(FTPClient.class);
 	SelectionKey selkey = null;
 	Selector sckt_manager = null;
-	ByteBuffer buffer = ByteBuffer.allocateDirect(5024);
-	ByteBuffer readBuf = ByteBuffer.allocateDirect(5024);
+	ByteBuffer buffer = ByteBuffer.allocateDirect(2048);
+	ByteBuffer readBuf = ByteBuffer.allocateDirect(2048);
 	FileOutputStream fos = null;
 	File rcvdFile = null;
 
@@ -127,11 +127,11 @@ public class FTPClient extends Thread {
 				}
 			}
 			// _logger.debug("Out of while loop ");
-			FileTransferAck ack = new FileTransferAck(true);
-			_logger.debug("Client is sending File Complete Transfer Ack");
-			buffer.clear();
-			buffer = ByteBuffer.wrap(Encoder.encode(ack));
-			sc.write(buffer);
+//			FileTransferAck ack = new FileTransferAck(true);
+//			_logger.debug("Client is sending File Complete Transfer Ack");
+//			buffer.clear();
+//			buffer = ByteBuffer.wrap(Encoder.encode(ack));
+//			sc.write(buffer);
 			_logger.debug("File Transfer is complete. Now the file is being opened");
 			if (Desktop.isDesktopSupported()) {
 				try {
@@ -177,7 +177,7 @@ public class FTPClient extends Thread {
 		byte[] bytes = new byte[buffer.remaining()];
 		buffer.get(bytes);
 		if (bytes.length > 0) {
-			message = Encoder.decode(bytes);
+			message = (Message) Encoder.decode(bytes);
 			// _logger.debug("Message length is "+ bytes.length +
 			// message.getClass());
 			buffer.clear();
